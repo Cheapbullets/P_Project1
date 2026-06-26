@@ -7,7 +7,9 @@ def main():
     player_name = input("Name your hero: ")
     player = player_start(player_name)
     mob = mob_spawn(player.level)
-    fight(player, mob)
+    xp, win = fight(player, mob)
+    if win == 1:
+        player.xp += xp
 
 if __name__ == "__main__":
     main()

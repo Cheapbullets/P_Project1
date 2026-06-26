@@ -27,4 +27,4 @@ def mob_spawn(level):
 
 def randomizer(num, level):
     minimum = max((num // 2), 1)
-    random.randint(minimum, num + level + 3)
+    return random.randint(minimum, num + int(level * 1.5))
