@@ -40,7 +40,11 @@ def fight(player, mob):
     
     if battle_tick > 0:
         if player.cur_hp > 0:
-            xp = mob.level * 2
+            xp_multi = (mob.level - player.level)
+            if xp_multi < 1:
+                xp_multi = 1
+            xp = xp_multi * 2
+
             print(f"{player.name} has defeated {mob.name}!")
             print(f"{player.name} has been awarded {xp}xp!")
 
